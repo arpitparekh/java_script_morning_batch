@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script Learning</title>
+</head>
+
+<body>
+
+    <p id="para"> Paragraph </p>
+    <p id="ans"></p>
+
+    <span>5/6 = </span>
+
+    <script>
+        console.log("Hello World in console");
+        document.getElementById("para").innerHTML = "From Java Script";
+        document.write(5/6);
+        <!-- window.alert('This is from window'); -->
+
+        var a = 12;
+        a = 10;
+        var b = 13;
+        var c = a+b;
+
+        document.getElementById("ans").innerHTML = c;
+
+    </script>
+
+    <br><br><button onclick="window.print()"> Press Me </button>
+
+</body>
+
+</html>
