@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- this is comment -->
+
+</head>
+<body>
+    
+    <p id="para1"></p>
+    <p id="para2"></p>
+    <p id="para3"></p>
+    <p id="para4"></p>
+    <p id="para5"></p>
+    <p id="para6"></p>
+<script>
+
+    // datatype and variables
+
+    // 121  12.21  "helo" 'helo' 'c'
+
+    let name = 'bascom';   // string  // string datatype is a collection of characters
+
+    // document.getElementById("para").innerHTML = name;
+    console.log(name);
+    document.write(name);
+
+    let a = 12;
+    var b = 12;   // if you are using older browser
+
+    const c = 13;  // you can not reassign value to the const variable
+    // c = 13;
+
+    document.getElementById("para1").innerHTML = c;
+
+    {   // block
+        let k = 13;
+        var l = 14;    // global variable
+    }
+
+    // document.getElementById("para2").innerHTML = k;
+    document.getElementById("para2").innerHTML = l;
+
+    // find a area of circle  // pi
+
+    const pi = 3.14;
+    let radius = 45.46;
+    let area = pi*radius*radius;
+    document.getElementById("para3").innerHTML = "Area is : "+ area + " <= ";  // string variable concatenation
+
+    let m = 12.13 , n = 13/2 , o = 14.5;  // multiline variable initialization and declaration
+
+    document.getElementById("para4").innerHTML = "m ="+m+" n = "+n+" o = "+o;
+
+    let number = 12+13+15+16;  // 56
+    document.getElementById("para4").innerHTML = "Number is => "+ number;  // 56
+
+    let data = "5"+3+2;
+    document.getElementById("para5").innerHTML = "Number is => " + data;  // "532"
+
+    let result = number + data;
+    document.getElementById("para6").innerHTML = "Number is => " + result;  // 56+"532"
+
+    // let $ = 88.5;  // java script uses $ as a character
+
+
+</script>
+</body>
+</html>
