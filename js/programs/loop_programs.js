@@ -11,7 +11,6 @@
 
 
 
-
 // 1
 
 // number only divisible by 1 and itself
