@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Size</title>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #content {
+        width: 100px;
+        height: 100px;
+        background-color: #4caf50;
+        margin-bottom: 20px;
+      }
+
+      #my_div {
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      button:nth-child(1) {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      button:nth-child(2) {
+        background-color: #f44336;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content"></div>
+
+    <div id="my_div">
+      <button onclick="increaseDecrease('up')">Increase</button>
+      <button onclick="increaseDecrease('down')">Decrease</button>
+    </div>
+
+    <script>
+      const div = document.getElementById("content");
+
+      var height = div.offsetHeight;
+      var width = div.offsetWidth;
+
+      function increaseDecrease(task) {
+        if (task == "up") {
+          height += 10;
+          width += 10;
+          div.style.height = height + "px";
+          div.style.width = width + "px";
+        } else {
+          height -= 10;
+          width -= 10;
+          div.style.height = height + "px";
+          div.style.width = width + "px";
+        }
+      }
+    </script>
+  </body>
+</html>

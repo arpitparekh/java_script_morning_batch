@@ -1,0 +1,1 @@
+vehicle.full_detail

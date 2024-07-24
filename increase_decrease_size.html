@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Size</title>
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #content {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+
+      #my_div {
+        display: flex;
+        gap: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      button:hover {
+        transform: scale(1.05);
+      }
+
+      button:nth-child(1) {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      button:nth-child(2) {
+        background-color: #f44336;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="content">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+    <div id="my_div">
+      <button onclick="increaseDecrease('up')">Increase</button>
+      <button onclick="increaseDecrease('down')">Decrease</button>
+    </div>
+
+    <script>
+      var size = 20;
+
+      document.getElementById("content").style.fontSize = size + "px";
+
+      function increaseDecrease(task) {
+        switch (task) {
+          case "up":
+            size++; // 12
+            document.getElementById("content").style.fontSize = size + "px";
+            break;
+
+          case "down":
+            size--;
+            document.getElementById("content").style.fontSize = size + "px";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
