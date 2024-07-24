@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Data Using JavaScript Object</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+      h2 {
+        color: #333;
+        margin: 10px 0;
+      }
+      #name,
+      #email,
+      #address {
+        font-weight: normal;
+        font-size: 18px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="name"></h2>
+    <h2 id="email"></h2>
+    <h2 id="address"></h2>
+
+    <script>
+      json = localStorage.getItem("data");
+
+      user = JSON.parse(json);
+
+      document.getElementById("name").innerHTML = user.name;
+      document.getElementById("email").innerHTML = user.email;
+      document.getElementById("address").innerHTML = user.address;
+    </script>
+  </body>
+</html>
