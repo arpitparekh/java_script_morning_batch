@@ -13,6 +13,8 @@ car = {
 }
 
 car.displayData()
+delete car.model
+console.log(car)
 
 circle = {
     getArea: function (a) {
