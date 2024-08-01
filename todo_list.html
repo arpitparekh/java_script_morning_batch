@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO-DO list</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+
+      #parent {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 300px;
+      }
+
+      #field {
+        display: flex;
+        margin-bottom: 20px;
+      }
+
+      #input {
+        flex: 1;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      #add {
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      #add:hover {
+        background-color: #0056b3;
+      }
+
+      #display {
+        max-height: 300px;
+        overflow-y: auto;
+      }
+
+      .todo-item {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .todo-item button {
+        border: none;
+        background-color: transparent;
+        color: #ff0000;
+        cursor: pointer;
+      }
+
+      .todo-item button:hover {
+        color: #cc0000;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <div id="field">
+        <input id="input" type="text" />
+        <button id="add" onclick="addTodo()">Add</button>
+      </div>
+
+      <div id="display"></div>
+    </div>
+
+    <script>
+      function addTodo() {
+        let tag = document.getElementById("input");
+
+        let input = document.getElementById("input").value;
+
+        if (input != "") {
+          let division = document.createElement("div");
+          division.className = "todo-item";
+
+          
+          let todo = document.createElement("p");
+          todo.innerHTML = input;
+
+          let button = document.createElement("button");
+          button.innerHTML = "remove";
+          button.onclick = function () {
+            division.remove();
+          };
+
+          division.appendChild(todo);
+          division.appendChild(button);
+
+          division.style.display = "flex";
+          division.style.justifyContent = "space-between";
+
+          document.getElementById("display").appendChild(division);
+
+          tag.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

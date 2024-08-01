@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Paragraph</title>
+  </head>
+  <body>
+    <input type="number" id="input" />
+    <button id="add" onclick="doSomething()">Add paragraph</button>
+
+    <script>
+      let i = document.getElementById("input");
+      let b = document.getElementById("add");
+
+      function doSomething() {
+        let number = parseInt(i.value); // 100
+
+        for (let i = 1; i <= number; i++) {
+          let e = document.createElement("p");
+          e.innerHTML = "para "+i;
+          document.body.appendChild(e);
+        }
+      }
+    </script>
+  </body>
+</html>

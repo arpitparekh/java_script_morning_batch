@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Manipulation</title>
+  </head>
+  <body>
+
+    <div id="myDiv">
+
+    </div>
+
+    <p id="p1">
+      google link
+      <a href="https://www.google.com">Google</a>
+    </p>
+    <p id="p2">this is my paragraph tag</p>
+
+    <p class="paraClass">another para</p>
+
+    <p class="paraClass">second para</p>
+
+    <p id="pop">bolo lyo</p>
+
+    <a id="anchor"> click me </a>
+
+    <script>
+
+
+
+      let para = document.getElementById("p1"); // paragraph object
+      console.log(para);
+      para.style.color = "red";
+
+      let para2 = document.getElementsByTagName("p");
+      console.log(para2);
+      para2[1].style.color = "blue";
+
+      let para3 = document.getElementsByClassName("paraClass");
+      console.log(para3);
+      para3[0].style.color = "green";
+      para3[1].style.color = "green";
+
+      para3[1].innerHTML = "This is comming from javascript";
+
+      console.log(para3[1].attributes);
+      console.log(para3[1].style);
+
+      // setting a attribute
+
+      let para4 = document.getElementById("pop");
+      para4.style.backgroundColor = "red";
+      //   para4.setAttribute("width", "100px");
+      //   para4.setAttribute("height", "300px");
+      para4.style.width = "100px";
+      para4.style.height = "300px";
+
+      let anchor = document.getElementById("anchor");
+    //   anchor.setAttribute(
+    //     "href",
+    //     "https://drive.google.com/drive/my-drive?lfhs=2"
+    //   );
+
+      anchor.href = "https://drive.google.com/drive/my-drive?lfhs=2"
+
+      let e = document.createElement("p");
+      e.innerHTML = "this is created by javascript"
+      e.style.color = "red"
+        
+      document.getElementById("myDiv").appendChild(e)
+      document.body.appendChild(e)
+
+      document.body.removeChild(para)
+
+      let child = document.createElement("p")
+      child.innerHTML = "this is a child"
+
+      document.body.replaceChild(child,para2[1])
+      
+
+    </script>
+  </body>
+</html>
