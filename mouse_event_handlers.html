@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <button
+      style="width: 200px; height: 200px"
+      id="btn"
+      onclick="clickEvent()"
+      ondblclick="doubleClickEvent()"
+      onmouseover="onmouseOverEvent()"
+      onmouseout="onmouseOutEvent()"
+      onmouseup="onmouseUpEvent()"
+      onmousedown="onmouseDownEvent()"
+      onmousewheel="onmouseWheelEvent()"
+      onmousemove="onmouseMoveEvent()"
+    >
+      Click Me!
+    </button>
+
+    <script>
+      function clickEvent() {
+        console.log("Button clicked");
+      }
+      function doubleClickEvent() {
+        console.log("Button double clicked");
+      }
+      function onmouseOverEvent() {
+        console.log("Inside button");
+      }
+      function onmouseOutEvent() {
+        console.log("Outside button");
+      }
+      function onmouseUpEvent() {
+        console.log("Mouse Up");
+      }
+      function onmouseDownEvent() {
+        console.log("Mouse Down");
+      }
+      function onmouseWheelEvent() {
+        console.log("Mouse Wheel");
+      }
+      function onmouseMoveEvent() {
+        console.log("Mouse Move");
+      }
+    </script>
+  </body>
+</html>

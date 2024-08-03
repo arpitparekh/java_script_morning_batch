@@ -91,14 +91,12 @@
     <script>
       function addTodo() {
         let tag = document.getElementById("input");
-
         let input = document.getElementById("input").value;
 
         if (input != "") {
           let division = document.createElement("div");
           division.className = "todo-item";
 
-          
           let todo = document.createElement("p");
           todo.innerHTML = input;
 

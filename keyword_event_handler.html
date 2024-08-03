@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <!-- keydown -->
+    <!-- keypress -->
+    <!-- deprecated -->
+    <!-- keyup -->
+    <input id="input" type="text" placeholder="Please Enter Something" />
+
+    <p id="message"></p>
+
+    <!-- we don't want to give events using atributes -->
+
+    <script>
+      let i = document.getElementById("input"); // dom object
+      let p = document.getElementById("message");
+
+      let context = "an";
+
+      i.addEventListener("keydown", function (event) {
+        context = context + event.key;
+        p.innerText = context;
+      });
+      i.addEventListener("keyup", function (event) {
+        console.log(event.key);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input id="name" type="text" /><br />
+      <select id="gender">
+        <option>Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option></select
+      ><br />
+      <button id="btm" type="submit"> Submit Form</button>
+    </form>
+
+    <script>
+      let name = document.getElementById("name");
+      let gender = document.getElementById("gender");
+      let btm = document.getElementById("btm");
+      let form = document.getElementById("myForm");
+
+      form.addEventListener("submit", function (event) {
+        console.log("form submitted");
+      });
+
+      gender.addEventListener("change", function (event) {
+        console.log("Gender changed");
+      });
+
+      name.addEventListener("focus", function (event) {
+        console.log("name is focused");
+      });
+
+      name.addEventListener("input", function (event) {
+        console.log("name is changed");
+      });
+
+
+      // gender.style.position = 'top|left' try this
+
+    </script>
+  </body>
+</html>
