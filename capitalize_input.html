@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Capitalize</title>
+  </head>
+  <body>
+    <input id="input" type="text" />
+    <p id="result"></p>
+
+    <script>
+      const input = document.getElementById("input");
+      const p = document.getElementById("result");
+
+      let str = "";
+
+      input.addEventListener("keydown", function (event) {
+        // if (event.key === "Enter") {
+        //   alert(input.value.toUpperCase());
+        // }
+
+        // if (event.key === "Enter") {
+        //   p.innerHTML = input.value.toUpperCase();
+        // }
+
+        if (
+          (event.key >= "a" && event.key <= "z") ||
+          (event.key >= "A" && event.key <= "Z")
+        ) {
+          str = str + event.key.toUpperCase();
+          p.innerHTML = str;
+        }
+      });
+    </script>
+  </body>
+</html>

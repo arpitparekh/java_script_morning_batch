@@ -1,0 +1,55 @@
+<!-- 
+How do you prevent a form from submitting using JavaScript?
+What's the difference between event.preventDefault() and event.stopPropagation()?
+How can you implement keyboard shortcuts in a web application?
+Explain the concept of event delegation and provide an example of its use.
+How would you create a custom right-click context menu using JavaScript?
+What are the main differences between mouseenter and mouseover events?
+How can you detect when a user has finished typing in an input field?
+Explain how to implement drag and drop functionality without using HTML5's native drag and drop API.
+How would you create a modal that closes when clicking outside of it?
+What's the purpose of the 'passive' option in addEventListener, and when would you use it?
+How can you detect if the user is scrolling up or down the page?
+Explain how to implement infinite scrolling on a web page.
+How would you create a custom slider/range input?
+What's the difference between 'change' and 'input' events for form elements?
+How can you implement a debounce function for handling frequent events like window resizing?
+Explain how to create a simple lightbox for image galleries using JavaScript.
+How would you implement a character count limit on a textarea?
+What's the best way to handle browser-specific events in JavaScript?
+How can you detect when an element becomes visible in the viewport?
+Explain how to implement a basic autocomplete feature for an input field. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programs</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <input id="username" type="text" placeholder="username" /><br />
+      <input id="password" type="password" placeholder="password" /><br />
+      <button id="submit" >Submit</button>
+    </form>
+
+    <script>
+      let i1 = document.getElementById("username");
+      let i2 = document.getElementById("password");
+      let button = document.getElementById("submit")
+
+      button.addEventListener("click",function(){
+        checkField();
+      })
+
+      function checkField() {
+        if (i1.value == "") {
+          alert("Please enter your username");
+        } else if (i2.value == "") {
+          alert("Please enter your password");
+        }
+      }
+    </script>
+  </body>
+</html>
