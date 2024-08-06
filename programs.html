@@ -31,17 +31,32 @@ Explain how to implement a basic autocomplete feature for an input field. -->
     <form id="myForm">
       <input id="username" type="text" placeholder="username" /><br />
       <input id="password" type="password" placeholder="password" /><br />
-      <button id="submit" >Submit</button>
+      <button id="submit">Submit</button>
     </form>
 
     <script>
       let i1 = document.getElementById("username");
       let i2 = document.getElementById("password");
-      let button = document.getElementById("submit")
+      let button = document.getElementById("submit");
+      var numbers = "0123456789ABCDEF"; // string is a group of character
 
-      button.addEventListener("click",function(){
+      function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+
+      document.body.addEventListener("wheel", function (event) {
+        console.log("scroll karu chu");
+        changeColor();
+      });
+
+      //   i1.addEventListener("keydown", function (event) {
+      //     console.log("lakhu chu");
+      //     changeColor();
+      //   });
+
+      button.addEventListener("click", function () {
         checkField();
-      })
+      });
 
       function checkField() {
         if (i1.value == "") {
@@ -49,6 +64,19 @@ Explain how to implement a basic autocomplete feature for an input field. -->
         } else if (i2.value == "") {
           alert("Please enter your password");
         }
+      }
+
+      function changeColor() {
+        let v = "";
+
+        for (let i = 1; i <= 6; i++) {
+          // 6 var
+          v = v + numbers[getRndInteger(0, 15)];
+        }
+
+        document.body.style.backgroundColor = "#" + v;
+
+        document.getElementById("color").innerHTML = "#" + v;
       }
     </script>
   </body>
