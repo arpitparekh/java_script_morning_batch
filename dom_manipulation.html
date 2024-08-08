@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>original title</title>
+  </head>
+  <body>
+    <p id="myPara">This is my Paragraph</p>
+
+    <p class="paraClass"></p>
+
+    <a> click me </a>
+
+    <form id="MyForm">
+      <button id="btn"></button>
+    </form>
+
+    <script>
+      let b = document.getElementById("btn");
+
+      let b1 = document.forms['MyForm']['btn']
+
+      let p = document.createElement("p");
+      p.innerHTML = "This is Paragrph from javaScript";
+
+      let p1 = document.createElement("p");
+      p1.innerHTML = "This is another Paragrph from javaScript";
+
+      document.body.appendChild(p);
+      document.body.appendChild(p1);
+
+      p.style.fontSize = "30px";
+      p.style.backgroundColor = "black";
+      p.style.color = "white";
+
+      document.body.removeChild(p1);
+
+      //   document.head.title.innerHTML = "This is my website";
+
+      document.title = "This is my title";
+
+      document.getElementById("myPara").innerHTML = "Changed Text";
+
+      document.getElementsByClassName("paraClass")[0].innerHTML = "Hello";
+
+      //   document.getElementsByTagName("a")[0].href =
+      //     "https://www.w3schools.com/js/js_htmldom_document.asp";
+
+      let anchor = document.getElementsByTagName("a")[0];
+
+      anchor.setAttribute(
+        "href",
+        "https://www.w3schools.com/js/js_htmldom_document.asp"
+      );
+
+      document.body.removeChild(document.getElementById("myPara"));
+
+      document
+        .getElementsByClassName("paraClass")[0]
+        .addEventListener("click", function () {});
+
+      document.getElementsByTagName("a")[0].name = "MyAnchor";
+
+      console.log(document.anchors);
+      console.log(document.baseURI);
+    </script>
+  </body>
+</html>

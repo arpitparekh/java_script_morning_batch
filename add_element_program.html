@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="input" type="number" />
+
+    <div id="myDiv"></div>
+
+    <script>
+
+        // java script
+        // dom manupilation (document object model)
+        // remove element
+        // add element
+        // change properties
+        // change atributes
+        // css
+        // animation
+        // event
+        // event listener
+        // event delegation
+        // callback funtions
+
+
+      let input = document.getElementById("input");
+
+      let div = document.getElementById("myDiv");
+      div.style.display = "flex";
+      div.style.flexWrap = "wrap";
+      div.style.gap = "10px";
+
+      function deleteChild() {
+        //e.firstElementChild can be used.
+        let child = div.lastElementChild;
+
+        while (child) {
+          div.removeChild(child);
+          child = div.lastElementChild;
+        }
+      }
+
+      input.addEventListener("keydown", function (event) {
+        if (event.key == "Enter") {
+          if (parseInt(input.value) >= 50) {
+            alert("Please Enter Size Below 50");
+          } else {
+            deleteChild();
+
+            let number = parseInt(input.value);
+
+            for (let i = 1; i <= number; i++) {
+              let p = document.createElement("p");
+              p.style.width = "100px";
+              p.style.height = "100px";
+              p.style.backgroundColor = "red";
+              div.appendChild(p);
+            }
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
