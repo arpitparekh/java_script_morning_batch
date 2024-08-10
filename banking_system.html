@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="buttons">
+      <button id="addAccount">Open Account</button>
+    </div>
+
+    <div id="content"></div>
+
+    <script>
+      let content = document.getElementById("content");
+      content.style.paddingTop = "10px";
+
+      let addAccount = document.getElementById("addAccount");
+
+      addAccount.addEventListener("click", function () {
+        content.innerHTML = "";
+        content.appendChild(openAccountScreen());
+      });
+
+      function ResultShow(name) {
+        // create para
+
+        let para = document.createElement("p");
+        para.innerHTML = name;
+        return para;
+      }
+
+      function openAccountScreen() {
+        // create a divisiob with form data
+
+        let div = document.createElement("div");
+
+        let form = document.createElement("form");
+        form.style.display = "flex";
+        form.style.flexDirection = "column";
+        form.style.width = "200px";
+        form.style.gap = "10px";
+        form.action = "#";
+
+        let name = document.createElement("input");
+        name.type = "text";
+        name.placeholder = "Name";
+        name.id = "name";
+        let email = document.createElement("input");
+        email.type = "email";
+        email.placeholder = "Email";
+        email.id = "email";
+        let address = document.createElement("input");
+        address.type = "text";
+        address.placeholder = "Address";
+        address.id = "address";
+        let phone = document.createElement("input");
+        phone.type = "number";
+        phone.placeholder = "Phone";
+        phone.id = "phone";
+        // add button to form
+
+        let button = document.createElement("button");
+        button.innerHTML = "Submit";
+
+        button.onclick = function () {
+          submitForm();
+        };
+
+        form.appendChild(name);
+        form.appendChild(email);
+        form.appendChild(address);
+        form.appendChild(phone);
+        form.appendChild(button);
+        div.appendChild(form);
+
+        return div;
+      }
+
+      function submitForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let address = document.getElementById("address").value;
+        let phone = document.getElementById("phone").value;
+
+        let user = {
+          name: name,
+          email: email,
+          address: address,
+          phone: phone,
+          printObj: function () {
+            return (
+              "Name : " +
+              this.name +
+              " Email : " +
+              this.email +
+              " Address : " +
+              this.address +
+              " Phone : " +
+              this.phone
+            );
+          },
+        };
+
+        content.innerHTML = "";
+        content.appendChild(
+          ResultShow("User Create SuccessFully\n" + user.printObj())
+        );
+      }
+    </script>
+  </body>
+</html>
