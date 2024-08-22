@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click</title>
+</head>
+<body>
+    
+    <button id="btn"> click me</button>
+
+    <script>
+
+        /*
+        function clickButton(){
+            alert("hello")
+        }
+
+         btn.onclick = function(){
+            alert("hello")
+        }
+
+        */
+
+        var btn = document.getElementById("btn");
+
+        myClick = function(){
+            alert("hello")
+        }
+
+        myClick2 = () => alert("hello")
+
+        myClick3 = () => {
+            
+        }
+
+        btn.addEventListener("click",myClick)
+       
+
+    </script>
+
+</body>
+</html>
