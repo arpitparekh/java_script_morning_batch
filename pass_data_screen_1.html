@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Screen 1</title>
+    </head>
+    <body>
+        <form action="pass_data_screen_2.html">
+            <label>Firstname</label><br />
+            <input type="text" id="firstname" /><br />
+            <label>Lastname</label><br />
+            <input type="text" id="lastname" /><br />
+            <label>Email</label><br />
+            <input type="email" id="email" /><br />
+            <label>Password</label><br />
+            <input type="password" id="password" /><br />
+            <button type="submit" style="margin-top: 10px" id="myButton">
+                Submit
+            </button>
+        </form>
+
+        <script>
+            class User {
+                constructor(firstname, lastname, email, password) {
+                    this.firstname = firstname;
+                    this.lastname = lastname;
+                    this.email = email;
+                    this.password = password;
+                }
+            }
+
+            first = document.getElementById('firstname');
+            last = document.getElementById('lastname');
+            email = document.getElementById('email');
+            pass = document.getElementById('password');
+            button = document.getElementById('myButton');
+
+            click = function () {
+                let user = new User(
+                    first.value,
+                    last.value,
+                    email.value,
+                    pass.value
+                );
+
+                // convert object into json string
+                let user_json = JSON.stringify(user);
+
+                localStorage.setItem('myObj', user_json);
+
+                // window.location.href = 'pass_data_screen_2.html';
+
+                // cache
+
+                // object => string
+                // string => localstorage
+                // in second screen
+                // localstorage => string => object
+            };
+
+            button.addEventListener('click', click);
+        </script>
+    </body>
+</html>
