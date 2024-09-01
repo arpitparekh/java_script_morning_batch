@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Different Boxes</title>
+</head>
+<body>
+
+  <button id="alert"> Alert Box</button><br>
+  <button id="confirm"> Confirm Box</button><br>
+  <button id="prompt"> Prompt Box</button><br>
+
+  <script>
+
+    var alertBtn = document.getElementById("alert");
+    var confirmBtn = document.getElementById("confirm");
+    var promptBtn = document.getElementById("prompt");
+
+    alertBtn.onclick = function(){
+
+      let w = window.innerWidth;
+      let h = window.innerHeight;
+      alert(`Width : ${w} \nHeight : ${h}`);
+    }
+
+    confirmBtn.onclick = function(){
+      let bool = confirm("Are you sure you want to close this windows?");
+      if(bool){
+        window.close();
+      }
+      else{
+        window.open("https://www.google.com");
+      }
+    }
+
+    promptBtn.onclick = function(){
+      let name = prompt("Enter your name","Bascom");
+      let email = prompt("Enter your email","b@gmail.com");
+      alert(`Name : ${name} \nEmail : ${email}`);
+    }
+
+  </script>
+  
+</body>
+</html>
