@@ -46,7 +46,7 @@ c.swim();
 c.cycling();
 
 
-class X{
+class X{   // heiratchical inheritance
 
 }
 

@@ -20,6 +20,10 @@ class BookStore {
         this.name = name;
         this.no_book = no_book;
     }
+
+    display() {
+        console.log("This is book store");
+    }
 }
 
 let college = new College('ADIT', 1000);
@@ -32,3 +36,4 @@ console.log(college2.name);
 console.log(college2.no_student);
 
 let bookStore = new BookStore('ABC', 1000);
+bookStore.display();
